@@ -9,15 +9,15 @@ The easiest way to view the blog is using beaker browser by visiting the followi
 
 ## post.txt structure
 
-We are using text files to create a simple content management system.
+We are using text files to create a basic content management system.
 Each user of the file sharing system has its own folder with post.txt file.
 This file is fetched from the function.js file and used to fetch the blog posts.
 
 The post.txt file uses following structure: Date, Catagory, Title, Link  
 
-22-10-21, Flowers, Flower seeds, user1/test.md  
-23-10-21, Flowers, Flower smells, user2/test.md  
-24-10-21, Tree, Tree leaves, user1/test2.md  
+23-Aug-2021, Flowers, Flower seeds, user1/test.md  
+24-Aug-2021, Flowers, Flower smells, user2/test.md  
+25-Aug-2021, Tree, Tree leaves, user1/test2.md  
 
 
 ## Folder structure
