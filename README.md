@@ -1,11 +1,11 @@
-# Hyper-Protocol-Blog
+# Hypercore-Protocol-Blog
 
-This is a simple decentralized collaborative markdown blog that is compatible with the Hyper Protocol network.
+This is a simple decentralized collaborative markdown blog that is compatible with the Hypercore Protocol network.
 We are using the mount function of hyperdrive to create a P2P file sharing system and showdown.js to convert markdown files into blog posts.
 
 ## View the blog
 
-The easiest way to view the blog is using beaker browser by visiting the following url: hyper://cab491db39be39c0542c611f60b12eabe689efbf2fd0210e280d73507137e0dd/
+The easiest way to view the blog is using Beaker browser by visiting the following url: hyper://cab491db39be39c0542c611f60b12eabe689efbf2fd0210e280d73507137e0dd/
 
 ## post.txt structure
 
