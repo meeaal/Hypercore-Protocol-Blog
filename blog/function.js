@@ -1,5 +1,5 @@
 // people that have the right to publish posts
-let userPool = ['mats/post.txt', 'meeuwis/post.txt', 'meeuwis/post.txt', 'meeuwis/post.txt', 'meeuwis/post.txt'];
+let userPool = ['projects/post.txt'];
 
 // init showdown converter
 let conv = new showdown.Converter();
@@ -14,7 +14,7 @@ if(links != null){
 }
 
 async function fetchLinks(urls){
-    
+
     Promise.all(
         urls.map(url => fetch(url).then((response) => response.blob()) )
     ).then((data) => {
@@ -40,7 +40,7 @@ async function fetchLinks(urls){
             }
         }
 
-    });     
+    });
 }
 
 // file fetcher based on url
@@ -87,7 +87,7 @@ function buildPage(){
     filterButton.textContent = "all";
     filterButton.classList.add("selected");
 
-    filterButton.addEventListener("click", function(){ 
+    filterButton.addEventListener("click", function(){
         filterCatagory("filter");
         // remove selected class from all buttons
         let selected = document.querySelectorAll(".selected");
@@ -104,18 +104,21 @@ function buildPage(){
         let link = document.createElement("div")
         let date = document.createElement("h5");
         let title = document.createElement("h4");
+        let cover = document.createElement("img");
 
         date.textContent = postDatabase[i][0];
         link.classList.add("filter");
         link.classList.add(postDatabase[i][1]);
         title.textContent = postDatabase[i][2];
+        cover.src = postDatabase[i][4];
+        cover.classList.add("cover")
 
         // if filter button does not already exist, add it to filters
         if(!filterArray.includes(postDatabase[i][1])){
             let filterButton = document.createElement("h4");
             filterButton.textContent = postDatabase[i][1];
 
-            filterButton.addEventListener("click", function(){ 
+            filterButton.addEventListener("click", function(){
                 filterCatagory(postDatabase[i][1]);
                 // remove selected class from all buttons
                 let selected = document.querySelectorAll(".selected");
@@ -132,7 +135,7 @@ function buildPage(){
 
 
         // add click event listner to link element
-        link.addEventListener("click", function(){ 
+        link.addEventListener("click", function(){
 
             // replace content with html based on file destination
             let content = document.getElementById("content");
@@ -155,9 +158,9 @@ function buildPage(){
 
                         document.body.scrollTop = document.documentElement.scrollTop = 0;
 
-                        document.querySelector(".close").addEventListener("click", function(){ 
+                        document.querySelector(".close").addEventListener("click", function(){
                             document.getElementById("contentWrapper").style.display = "none";
-                            links.style.display = "block";
+                            links.style.display = "grid";
                         });
                     }
 
@@ -170,6 +173,7 @@ function buildPage(){
             links.style.display = "none";
         });
 
+        link.appendChild(cover);
         link.appendChild(date);
         link.appendChild(title);
         links.appendChild(link);
